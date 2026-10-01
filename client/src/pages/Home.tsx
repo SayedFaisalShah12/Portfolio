@@ -126,7 +126,7 @@ export default function Home() {
               >
                 View My Work <ArrowRight size={16} />
               </Button>
-              <a href="/resume.pdf" download>
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} download>
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 flex items-center gap-2">
                   <Download size={16} />
                   Download CV
