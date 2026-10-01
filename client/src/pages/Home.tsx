@@ -137,7 +137,7 @@ export default function Home() {
             {/* Social Links */}
             <div className="flex gap-4 pt-6">
               <a
-                href="https://github.com"
+                href="https://github.com/SayedFaisalShah12"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-card hover:bg-primary/20 text-primary transition-all duration-300 hover:scale-110"
