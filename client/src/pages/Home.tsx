@@ -92,7 +92,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('/images/hero-bg.png')",
+            backgroundImage: `url('${import.meta.env.BASE_URL}images/hero-bg.png')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.3,
