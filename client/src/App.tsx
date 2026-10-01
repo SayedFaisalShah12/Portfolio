@@ -45,8 +45,19 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  function App() {
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
 
+  if (redirect) {
+    window.history.replaceState(
+      {},
+      "",
+      import.meta.env.BASE_URL.replace(/\/$/, "") + redirect
+    );
+  }
+
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   return (
     <ErrorBoundary>
       <ThemeProvider
