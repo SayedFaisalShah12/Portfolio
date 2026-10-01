@@ -136,7 +136,7 @@ export default function Skills() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('/images/skills-pattern.png')",
+            backgroundImage: `url('${import.meta.env.BASE_URL}images/skills-pattern.png')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.15,

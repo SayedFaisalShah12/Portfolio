@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -45,17 +46,19 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  function App() {
-  const params = new URLSearchParams(window.location.search);
-  const redirect = params.get("redirect");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get("redirect");
 
-  if (redirect) {
-    window.history.replaceState(
-      {},
-      "",
-      import.meta.env.BASE_URL.replace(/\/$/, "") + redirect
-    );
-  }
+    if (redirect) {
+      const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+      window.history.replaceState(
+        {},
+        "",
+        base + redirect
+      );
+    }
+  }, []);
 
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   return (
