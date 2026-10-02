@@ -1,21 +1,18 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "node:path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-export default defineConfig(({ command }) => ({
-  base: command === "build" ? "/Portfolio/" : "/",
-  root: path.resolve(import.meta.dirname, "client"),
-  publicDir: path.resolve(import.meta.dirname, "client/public"),
+// https://vitejs.dev/config/
+export default defineConfig({
   plugins: [react()],
+  base: '/Portfolio/',
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client/src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true,
+    outDir: 'dist',
+    sourcemap: false,
   },
-}));
+});
